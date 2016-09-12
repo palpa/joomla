@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content" method="upgrade" >
+    <name>VehicleManager - Link</name>
+    <author>OrdaSoft-Andrey Kvasnevskiy</author>
+    <creationDate>2013</creationDate>
+    <copyright>(C) 2013 OrdaSoft - Andrey Kvasnevskiy </copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <authorEmail>Andrey Kvasnevskiy(akbet@ordasoft.com)</authorEmail>
+    <authorUrl>www.ordasoft.com</authorUrl>
+    <version>3.0</version>
+    <description>Insert an image  link to a Vehicle in articles. Just write in text {vehiclemanager id=2}. Where id is id of Vehicle </description>
+    <files>
+        <filename plugin="VehiclemanagerLink_j3">VehiclemanagerLink_j3.php</filename>
+        <filename plugin="VehiclemanagerLink">VehiclemanagerLink.xml</filename>
+        <filename>VehiclemanagerLink.php</filename>
+    </files>
+
+
+    <params>
+
+        <param name="RealEstate_align" type="radio" default="no" label="VehicleManager Align" description="">
+            <option value="no">no
+                <br />
+            </option>
+            <option value="left">left
+                <br />
+            </option>
+            <option value="center">center
+                <br />
+            </option>
+            <option value="right">right
+                <br />
+            </option>
+        </param>
+        <param name="title_align" type="radio" default="left" label="VehicleManager Title"
+               description="title position of VehicleManager">
+            <option value="off">off</option>
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+        </param>
+        <param name="target" type="radio" default="_self" label="Target" description="">
+            <option value="_self">_self</option>
+            <option value="_blank">_blank</option>
+        </param>
+        <param name="caption" type="text" default="" label="Caption" description="" >
+        </param>
+    </params>
+
+
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="RealEstate_align" type="radio" default="no" label="VehicleManager Align"
+                       description="">
+                    <option value="no">no
+                        <br />
+                    </option>
+                    <option value="left">left
+                        <br />
+                    </option>
+                    <option value="center">center
+                        <br />
+                    </option>
+                    <option value="right">right
+                        <br />
+                    </option>
+                </field>
+                <field name="title_align" type="radio" default="left" label="VehicleManager Title"
+                       description="title position of VehicleManager">
+                    <option value="off">off</option>
+                    <option value="top">top</option>
+                    <option value="bottom">bottom</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                </field>
+                <field name="target" type="radio" default="_self" label="Target" description="">
+                    <option value="_self">_self</option>
+                    <option value="_blank">_blank</option>
+                </field>
+                <field name="caption" type="text" default="" label="Caption" description="" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
+

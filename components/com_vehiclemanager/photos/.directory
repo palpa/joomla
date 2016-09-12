@@ -1,0 +1,9 @@
+[Dolphin]
+AdditionalInfoV2=Details_Size,Details_Date,CustomizedDetails
+ShowPreview=true
+Timestamp=2015,5,22,14,1,24
+Version=3
+ViewMode=1
+
+[Settings]
+ShowDotFiles=true

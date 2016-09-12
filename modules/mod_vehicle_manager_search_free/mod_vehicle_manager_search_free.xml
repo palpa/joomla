@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/module-install.dtd">
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Vehicle Manager Search Free</name>
+    <author>Aleksey Pakholkov, Andrey Kvasnevskiy</author>
+    <creationDate>Updated on June 2013</creationDate>
+    <authorEmail>akbet@ordasoft.com</authorEmail>
+    <copyright>(C) 2013 OrdaSoft </copyright>
+    <authorUrl>http://www.ordasoft.com</authorUrl>
+    <version>3.1 Free</version>
+    <description>
+        Search module free for Vehicle Manager component
+    </description>
+    <files>
+        <filename module="mod_vehicle_manager_search_free">mod_vehicle_manager_search_free.php</filename>
+        <filename>mod_vehicle_manager_search_free.xml</filename>
+        <filename>index.html</filename>
+  <folder>tmpl</folder>
+    </files>
+
+<!-- Joomla 2.5.3 -->
+    <config>
+      <fields name="params">
+        <fieldset name="basic">
+          <field
+              name="layout"
+              type="modulelayout"
+              label="JFIELD_ALT_LAYOUT_LABEL"
+              description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+          <field name="showCategory" type="list" extension="com_vehiclemanager" default="0" label="Show Category"
+                 description="Show or hide category VehicleManager">
+              <option value="0">Show</option>
+              <option value="1">Hide</option>
+          </field>
+          
+          <field name="rent" type="list" extension="com_vehiclemanager" default="0" label="Show Availible for rent"
+                 description="Show or hide search for field 'Availible for rent' in the VehicleManager">
+              <option value="0">Show</option>
+              <option value="1">Hide</option>
+          </field>
+
+          <field name="year" type="list" extension="com_vehiclemanager" default='0' label="Show Year"
+                 description="Show or hide search for field 'Year' in the VehicleManager">
+              <option value="0">Show</option>
+                          <option value="1">Hide</option>
+          </field>
+
+          <field name="price" type="list" extension="com_vehiclemanager" default="0" label="Show Price"
+                 description="Show or hide search for field 'Price' in the VehicleManager">
+              <option value="0">Show</option>
+                          <option value="1">Hide</option>
+          </field>
+
+          <field name="maker" type="list" extension="com_vehiclemanager" default="0" label="Show Maker List"
+                 description="Show and/or search or no for vechicle's maker">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="model" type="list" extension="com_vehiclemanager" default="0" label="Show Model List"
+                 description="Show and/or search or no for vechicle's model">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="vehicle_type_list" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Vehicle Type List"
+                 description="Show and/or search or no for 'Vechicle type' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="drive_type_list" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Drive type"
+                 description="Show and/or search or no for 'Drive type' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="listing_type_list" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Listing Type List"
+                 description="Show and/or search or no for field 'Listing type' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="condition_status_list" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Condition Status List"
+                 description="Show and/or search or no for field 'Condition status' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="transmission_type_list" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Transmission List"
+                 description="Show and/or search or no for field 'Transmission' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="fuel_type_list" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Fuel Type List"
+                 description="Show and/or search or no for field 'Fuel type' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+           <field name="cylinder_list" type="list" extension="com_vehiclemanager" default="0"
+                  label="Show Number Of Cylinders"
+                  description="Show and/or search or no for field 'Number of cylinders' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+           <field name="num_speed_list" type="list" extension="com_vehiclemanager" default="0"
+                  label="Show Number Of Speeds"
+                  description="Show and/or search or no for field 'Number of speeds' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="listing_status_list" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Listing Status"
+                 description="Show and/or search or no for field 'Listing status' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="doors_list" type="list" extension="com_vehiclemanager" default="0" label="Show Doors"
+                 description="Show and/or search or no for field 'Doors list' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="price_type_list" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Price Type"
+                 description="Show and/or search or no for field 'Price type' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="dropdownfield6" type="list" extension="com_vehiclemanager" default="2"
+                 label="Show Custom Dropdown Field 6"
+                 description="Show and/or search or no for field 'Custom Dropdown Field 6' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="dropdownfield7" type="list" extension="com_vehiclemanager" default="2"
+                 label="Show Custom Dropdown Field 7"
+                 description="Show and/or search or no for field 'Custom Dropdown Field 7' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="dropdownfield8" type="list" extension="com_vehiclemanager" default="2"
+                 label="Show Custom Dropdown Field 8"
+                 description="Show and/or search or no for field 'Custom Dropdown Field 8' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="dropdownfield9" type="list" extension="com_vehiclemanager" default="2"
+                 label="Show Custom Dropdown Field 9"
+                 description="Show and/or search or no for field 'Custom Dropdown Field 9' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="dropdownfield10" type="list" extension="com_vehiclemanager" default="2"
+                 label="Show Custom Dropdown Field 10"
+                 description="Show and/or search or no for field 'Custom Dropdown Field 10' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+           <field name="showVID" type="list" extension="com_vehiclemanager" default="0" label="Show VID"
+                  description="Show and/or search or no for field 'VID' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showDescription" type="list" extension="com_vehiclemanager" default="0" label="Show Description"
+                 description="Show and/or search or no for field 'Description' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showTitle" type="list" extension="com_vehiclemanager" default="0" label="Show Title"
+                 description="Show and/or search or no for field 'Title' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showCountry" type="list" extension="com_vehiclemanager" default="0" label="Show Country"
+                 description="Show and/or search or no for field 'Country' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showRegion" type="list" extension="com_vehiclemanager" default="0" label="Show Region"
+                 description="Show and/or search or no for field 'Region' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showCity" type="list" extension="com_vehiclemanager" default="0" label="Show City"
+                 description="Show and/or search or no for field 'City' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showDistrict" type="list" extension="com_vehiclemanager" default="0" label="Show District"
+                 description="Show and/or search or no for field 'District' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showAddress" type="list" extension="com_vehiclemanager" default="0" label="Show Address"
+                 description="Show and/or search or no for field 'Address' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showMileage" type="list" extension="com_vehiclemanager" default="0" label="Show Mileage"
+                 description="Show and/or search or no for field 'Mileage' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showEngine_type" type="list" extension="com_vehiclemanager" default="0" label="Show Engine Type"
+                 description="Show and/or search or no for field 'Engine type' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showWheeltype" type="list" extension="com_vehiclemanager" default="0" label="Show Wheeltype"
+                 description="Show and/or search or no for field 'Wheeltype' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showExterior_colors" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Exterior colors"
+                 description="Show and/or search or no for field 'Exterior colors' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showExterior_extras" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Exterior extras"
+                 description="Show and/or search or no for field 'Exterior extras' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showInterior_colors" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Interior colors"
+                 description="Show and/or search or no for field 'Interior colors' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showDashboard_options" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Dashboard options"
+                 description="Show and/or search or no for field 'Dashboard options' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showInterior_extras" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Interior extras"
+                 description="Show and/or search or no for field 'Interior extras' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showSafety_options" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Safety options"
+                 description="Show and/or search or no for field 'Safety options' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showWarranty_options" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Warranty options"
+                 description="Show and/or search or no for field 'Warranty options' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="showOwner" type="list" extension="com_vehiclemanager" default="0" label="Show Owner"
+                 description="Show and/or search or no for field 'Owner' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+           <field name="showzipcode" type="list" extension="com_vehiclemanager" default="0" label="Show Zipcode"
+                  description="Show and/or search or no for field 'Zipcode' in the VehicleManager">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+          <field name="ContactInformation" type="list" extension="com_vehiclemanager" default="0"
+                 label="Show Contact Information"
+                 description="Show and/or search or no for field 'Contact Information' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="CityMPGKPL" type="list" extension="com_vehiclemanager" default="0" label="Show City MPG/KPL"
+                 description="Show and/or search or no for field 'City MPG/KPL' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="HighwayMPGKPL" type="list" extension="com_vehiclemanager" default="0" label="Show Highway MPG/KPL"
+                 description="Show and/or search or no for field 'Highway MPG/KPL' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="Rear_axel_type" type="list" extension="com_vehiclemanager" default="0" label="Show Rear axel type"
+                 description="Show and/or search or no for field 'Rear axel type' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="Brakes_type" type="list" extension="com_vehiclemanager" default="0" label="Show Brakes type"
+                 description="Show and/or search or no for field 'Brakes type' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="Wheelbase" type="list" extension="com_vehiclemanager" default="0" label="Show Wheelbase"
+                 description="Show and/or search or no for field 'Wheelbase' in the VehicleManager">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="extra1" type="list" extension="com_vehiclemanager" default="2" label="Custom Text Field 1"
+                 description="Show or hide Custom Text Field 1">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="extra2" type="list" extension="com_vehiclemanager" default="2" label="Custom Text Field 2"
+                 description="Show or hide Custom Text Field 2">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="extra3" type="list" extension="com_vehiclemanager" default="2" label="Custom Text Field 3"
+                 description="Show or hide Custom Text Field 3">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="extra4" type="list" extension="com_vehiclemanager" default="2" label="Custom Text Field 4"
+                 description="Show or hide Custom Text Field 4">
+            <option value="0">View and; Search</option>
+            <option value="1">Search</option>
+            <option value="2">None</option>
+          </field>
+
+          <field name="extra5" type="list" extension="com_vehiclemanager" default="2" label="Custom Text Field 5"
+                 description="Show or hide Custom Text Field 5">
+              <option value="0">View and; Search</option>
+              <option value="1">Search</option>
+              <option value="2">None</option>
+          </field>
+
+    </fieldset>
+
+      <fieldset name="advanced">
+          <field name="moduleclass_sfx" type="text" extension="com_vehiclemanager" default="" label="Module Class Suffix" description="Suffix for the css class of the module, to allow individual module styling" />
+          <field name="ItemId" type="text" extension="com_vehiclemanager" multiple="false" size="3" default="" label="ItemId" description="Enter Id for Menu Item vehiclemanager" />
+      </fieldset>
+    </fields>
+  </config>
+</extension>

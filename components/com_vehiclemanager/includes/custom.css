@@ -1,0 +1,17 @@
+/**
+ * @package  VehicleManager
+ * @copyright 2012 Andrey Kvasnevskiy-OrdaSoft(akbet@mail.ru); Rob de Cleen(rob@decleen.com)
+ * Homepage: http://www.ordasoft.com
+ * @version: 3.5 Free
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * */
+
+ tt { color:red; font-size:16px; }
+
+ div#list td { text-align:center; }
+ 
+ table.basictable tr.thead  td { color:#666; font:10px Verdana, sans-serif;  }
+ table.basictable tr, table.basictable tr td { border:0;}
+ 
+ td#pagenavig ul { list-style-type:none; margin:0; padding:0;  }
+ td#pagenavig ul li { display:block; float:left;  }

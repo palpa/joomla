@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+  <name>Vehicle Manager - vehicle SlideShow Free</name>
+  <creationDate>June 2013</creationDate>
+  <author>OrdaSoft</author>
+  <copyright>Copyright (C) 2013 OrdaSoft, All rights reserved.</copyright>
+  <authorEmail>akbet@ordasoft.com</authorEmail>
+  <authorUrl>http://www.ordasoft.com</authorUrl>
+  <version>3.0 Free</version>
+  <description>Vehicle Manager - vehicle SlideShow</description>
+
+
+<files>
+    <filename module="mod_vmslideshow_free">mod_vmslideshow_free.php</filename>
+    <filename>mod_vmslideshow_free.xml</filename>
+    <filename>helper.php</filename>
+    <filename>index.html</filename>
+    <folder>tmpl</folder>
+    <folder>assets</folder>
+    <folder>language</folder>
+ </files>
+    <languages>
+      <language tag="en-GB">language/en-GB/en-GB.mod_vmslideshow_free.ini</language>
+    </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field type="spacer" label="&lt;hr &#47;&gt;" />
+          <field
+      name="layout"
+      type="modulelayout"
+      label="JFIELD_ALT_LAYOUT_LABEL"
+      description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+        <field type="spacer" label="Components settings" />
+          <field  name="count_vehicle" type="text" extension="com_vehiclemanager"  default="4"
+                 label="Count of vehicles" description="Count of vehicles. Zero means not display any vehicles" />
+
+          <field  name="cat_id" type="text" extension="com_vehiclemanager"  default=" " label="IDs of categories"
+                 description="Input IDs of categories through a comma to show all items of this categories. Leave the field empty if you want to show items of all categories. " />
+
+          <field  name="vehicle_id" type="text" extension="com_vehiclemanager"  default=" " label="IDs of vehicles"
+                 description="Input IDs of vehicles through a comma. Leave the field empty if you want to show all items." />
+        <field name="sort_by" type="list" default="0" label="MOD_VMSLIDESHOW_SORT_BY"
+               description="MOD_VMSLIDESHOW_SORT_BY_DESC">
+          <option value="4">MOD_VMSLIDESHOW_SORT_BY_POPULAR</option>
+          <option value="3">MOD_VMSLIDESHOW_SORT_BY_TITLE</option>
+          <option value="2">MOD_VMSLIDESHOW_SORT_BY_PRICE</option>
+          <option value="1">MOD_VMSLIDESHOW_SORT_BY_DATE</option>
+          <option value="0">MOD_VMSLIDESHOW_SORT_BY_RANDOMISE</option>
+        </field>
+        <field name="show_title" type="radio" default="1" label="MOD_VMSLIDESHOW_SHOW_TITLE"
+               description="MOD_VMSLIDESHOW_SHOW_TITLE_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+        <field name="limit_title" type="text" default="12" size="10" label="Title limit"
+               description="Set limit in letters for title" />
+
+        <field name="link_title" type="radio" default="1" label="MOD_VMSLIDESHOW_LINK_TITLE"
+               description="MOD_VMSLIDESHOW_LINK_TITLE_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+        <field name="show_desc" type="radio" default="1" label="MOD_VMSLIDESHOW_SHOW_DESCRIPTION"
+               description="MOD_VMSLIDESHOW_SHOW_DESCRIPTION_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+        <field name="link_desc" type="radio" default="0" label="MOD_VMSLIDESHOW_LINK_DESCRIPTION"
+               description="MOD_VMSLIDESHOW_LINK_DESCRIPTION_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+        <field name="limit_desc" type="text" default="15" size="10" label="MOD_VMSLIDESHOW_DESCRIPTION_LIMIT"
+               description="MOD_VMSLIDESHOW_DESCRIPTION_LIMIT_DESC" />
+
+        <field name="show_price" type="radio" default="1" label="MOD_VMSLIDESHOW_SHOW_PRICE"
+               description="MOD_VMSLIDESHOW_SHOW_PRICE_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+        <field name="link_price" type="radio" default="0" label="MOD_VMSLIDESHOW_LINK_PRICE"
+               description="MOD_VMSLIDESHOW_LINK_PRICE_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+        <field name="show_address" type="radio" default="1" label="MOD_VMSLIDESHOW_SHOW_ADDRESS"
+               description="MOD_VMSLIDESHOW_SHOW_ADDRESS_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+        <field name="link_address" type="radio" default="0" label="MOD_VMSLIDESHOW_LINK_ADDRESS"
+               description="MOD_VMSLIDESHOW_LINK_ADDRESS_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+        <field name="limit_address" type="text" default="15" size="10" label="MOD_VMSLIDESHOW_ADDRESS_LIMIT"
+               description="MOD_VMSLIDESHOW_ADDRESS_LIMIT_DESC" />
+
+        <field name="slider_type" type="list" default="0" label="MOD_VMSLIDESHOW_SLIDER_TYPE"
+               description="MOD_VMSLIDESHOW_SLIDER_TYPE_DESC">
+          <option value="0">MOD_VMSLIDESHOW_HORIZONTAL</option>
+          <option value="1">MOD_VMSLIDESHOW_VERTICAL</option>
+          <option value="2">MOD_VMSLIDESHOW_FADE</option>
+        </field>
+
+        <field name="image_source_type" type="list" default="1" label="MOD_VMSLIDESHOW_IMAGE_SOURCE_TYPE"
+               description="MOD_VMSLIDESHOW_IMAGE_SOURCE_TYPE_DESC">
+          <option value="0">MOD_VMSLIDESHOW_IMAGE_SOURCE_TYPE_BIG</option>
+          <option value="1">MOD_VMSLIDESHOW_IMAGE_SOURCE_TYPE_MEDIUM</option>
+          <option value="2">MOD_VMSLIDESHOW_IMAGE_SOURCE_TYPE_SMALL</option>
+        </field>
+
+        <field name="link_image" type="list" default="1" label="MOD_VMSLIDESHOW_LINK_IMAGE"
+               description="MOD_VMSLIDESHOW_LINK_IMAGE_DESC">
+          <option value="0">MOD_VMSLIDESHOW_DONT_LINK</option>
+          <option value="1">MOD_VMSLIDESHOW_HYPERLINK</option>
+          <option value="2">MOD_VMSLIDESHOW_OPEN_IMAGE_IN_MODAL</option>
+        </field>
+
+
+        <field type="spacer" label="&lt;hr &#47;&gt;" />
+        <field type="spacer" label="BASIC SLIDER SETTINGS" description="MOD_VMSLIDESHOW_SLIDER_DIMENSIONS" />
+        <field type="spacer" label="" />
+        <field name="image_width" type="text" default="200" size="10" label="MOD_VMSLIDESHOW_SLIDE_WIDTH"
+               description="MOD_VMSLIDESHOW_SLIDE_WIDTH_DESC" />
+        <field name="image_height" type="text" default="130" size="10" label="MOD_VMSLIDESHOW_SLIDE_HEIGHT"
+               description="MOD_VMSLIDESHOW_SLIDE_HEIGHT_DESC" />
+        <field name="fit_to" type="list" default="0" label="MOD_VMSLIDESHOW_FIT_SIZE_TO"
+               description="MOD_VMSLIDESHOW_FIT_SIZE_TO_DESC">
+          <option value="0">MOD_VMSLIDESHOW_SLIDE_AUTO</option>
+          <option value="1">MOD_VMSLIDESHOW_SLIDE_WIDTH</option>
+          <option value="2">MOD_VMSLIDESHOW_SLIDE_HEIGHT</option>
+        </field>
+        <field name="visible_images" type="text" default="3" size="10" label="MOD_VMSLIDESHOW_VISIBLE_IMAGES"
+               description="MOD_VMSLIDESHOW_VISIBLE_IMAGES_DESC" />
+        <field name="space_between_images" type="text" default="10" size="10" label="MOD_VMSLIDESHOW_SPACE_BETWEEN_IMAGES"
+               description="MOD_VMSLIDESHOW_SPACE_BETWEEN_IMAGES_DESC" />
+        <field name="effect" type="list" default="Linear" label="MOD_VMSLIDESHOW_SLIDE_EFFECT"
+               description="MOD_VMSLIDESHOW_SLIDE_EFFECT_DESC">
+          <option value="Linear">Linear</option>
+          <option value="Cubic">Cubic</option>
+          <option value="Expo">Expo</option>
+          <option value="Circ">Circ</option>
+          <option value="Back">Back</option>
+          <option value="Bounce">Bounce</option>
+          <option value="Elastic">Elastic</option>
+        </field>
+        <field name="autoplay" type="radio" default="1" label="MOD_VMSLIDESHOW_AUTOPLAY"
+               description="MOD_VMSLIDESHOW_AUTOPLAY_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field name="show_buttons" type="radio" default="1" label="MOD_VMSLIDESHOW_SHOW_PLAY/PAUSE"
+               description="MOD_VMSLIDESHOW_SHOW_PLAY/PAUSE_DESC">
+          <option value="0">JNO</option>
+          <option value="2">JYES</option>
+          <option value="1">On mouse over</option>
+        </field>
+        <field name="show_arrows" type="radio" default="1" label="MOD_VMSLIDESHOW_SHOW_NEXT/PREV"
+               description="MOD_VMSLIDESHOW_SHOW_NEXT/PREV_DESC">
+          <option value="0">JNO</option>
+          <option value="2">JYES</option>
+          <option value="1">On mouse over</option>
+        </field>
+        <field name="show_custom_nav" type="radio" default="0" label="MOD_VMSLIDESHOW_SHOW_CUSTOM_NAVIGATION"
+               description="MOD_VMSLIDESHOW_SHOW_CUSTOM_NAVIGATION_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+      </fieldset>
+
+      <fieldset name="advanced">
+
+        <field type="spacer" label="CUSTOMISE SLIDE DESCRIPTION" />
+        <field name="desc_width" type="text" default="" size="10" label="MOD_VMSLIDESHOW_DESCRIPTION_WIDTH"
+               description="MOD_VMSLIDESHOW_DESCRIPTION_WIDTH_DESC" />
+        <field name="desc_bottom" type="text" default="0" size="10" label="MOD_VMSLIDESHOW_DESCRIPTION_VERTICAL_POSITION"
+               description="MOD_VMSLIDESHOW_DESCRIPTION_VERTICAL_POSITION_DESC" />
+        <field name="desc_horizontal" type="text" default="0" size="10" label="MOD_VMSLIDESHOW_DESCRIPTION_HORIZONTAL_POSITION"
+               description="MOD_VMSLIDESHOW_DESCRIPTION_HORIZONTAL_POSITION_DESC" />
+
+        <field type="spacer" label="&lt;hr &#47;&gt;" />
+        <field type="spacer" label="CUSTOMISE BUTTONS" />
+        <field name="left_arrow" type="text" default="" size="50" label="MOD_VMSLIDESHOW_PREV_BUTTON"
+               description="MOD_VMSLIDESHOW_PREV_BUTTON_DESC" />
+        <field name="right_arrow" type="text" default="" size="50" label="MOD_VMSLIDESHOW_NEXT_BUTTON"
+               description="MOD_VMSLIDESHOW_NEXT_BUTTON_DESC" />
+        <field name="play_button" type="text" default="" size="50" label="MOD_VMSLIDESHOW_PLAY_BUTTON"
+               description="MOD_VMSLIDESHOW_PLAY_BUTTON_DESC" />
+        <field name="pause_button" type="text" default="" size="50" label="MOD_VMSLIDESHOW_PAUSE_BUTTON"
+               description="MOD_VMSLIDESHOW_PAUSE_BUTTON_DESC" />
+        <field name="arrows_top" type="text" default="30" size="10" label="MOD_VMSLIDESHOW_NAV_BAR_VERTICAL_POSITION"
+               description="MOD_VMSLIDESHOW_NAV_BAR_VERTICAL_POSITION_DESC" />
+        <field name="arrows_horizontal" type="text" default="5" size="10" label="MOD_VMSLIDESHOW_NAV_BAR_HORIZONTAL_POSITION"
+               description="MOD_VMSLIDESHOW_NAV_BAR_HORIZONTAL_POSITION_DESC" />
+
+        <field type="spacer" label="&lt;hr &#47;&gt;" />
+        <field type="spacer" label="SLIDE EFFECT OPTIONS" />
+        <field name="effect_type" type="list" default="0" label="MOD_VMSLIDESHOW_SLIDE_EFFECT_TYPE"
+               description="MOD_VMSLIDESHOW_SLIDE_EFFECT_TYPE_DESC">
+          <option value="0">MOD_VMSLIDESHOW_SLIDE_AUTO</option>
+          <option value="easeIn">easeIn</option>
+          <option value="easeOut">easeOut</option>
+          <option value="easeInOut">easeInOut</option>
+        </field>
+        <field name="duration" type="text" default="" size="10" label="MOD_VMSLIDESHOW_SLIDE_DURATION"
+               description="MOD_VMSLIDESHOW_SLIDE_DURATION_DESC" />
+        <field name="delay" type="text" default="" size="10" label="MOD_VMSLIDESHOW_NEXT_SLIDE_DELAY"
+               description="MOD_VMSLIDESHOW_NEXT_SLIDE_DELAY_DESC" />
+        <field type="spacer" label="&lt;hr &#47;&gt;" />
+        <field name="preload" type="text" default="800" size="10" label="MOD_VMSLIDESHOW_PRELOAD_DELAY_TIME"
+               description="MOD_VMSLIDESHOW_PRELOAD_DELAY_TIME_DESC" />
+
+      </fieldset>
+
+      <fieldset name="OTHER">
+
+        <field	name="moduleclass_sfx"
+          type="text" extension="com_vehiclemanager"  default="" label="Module Class Suffix"
+          description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+
+        <field  name="ItemId"
+                type="text"
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId"
+                description="Enter Id for Menu Item vehiclemanager" />
+
+        <field
+          name="cache"
+          type="list"
+          default="0"
+          label="COM_MODULES_FIELD_CACHING_LABEL"
+          description="COM_MODULES_FIELD_CACHING_DESC">
+          <option	value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+        </field>
+
+      </fieldset>
+    </fields>
+  </config>
+
+</extension>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+  <name>VehicleManager</name>
+  <creationDate>06 August 2014</creationDate>
+  <author>Rob de Cleen, Andrey Kvasnevskiy</author>
+  <authorEmail>rob@decleen.com; akbet@mail.ru; </authorEmail>
+  <authorUrl>http://www.ordasoft.com</authorUrl>
+  <copyright>ordasoft - Andrey Kvasnevskiy </copyright>
+  <license>This component is released under License from included LICENSE.txt file</license>
+  <version>3.7 Free</version>
+  <description>VehicleManager - Joomla component for creating sites for selling or renting vehicles</description>
+
+  <!-- Custom un/installer for 1.6 -->
+  <scriptfile>install.uninstall.script.php</scriptfile>
+  <!-- Custom installer for 1.5 -->
+  <installfile>install.vehiclemanager.php</installfile>
+  <installfile>install.vehiclemanager.helper.php</installfile>
+  <!-- Custom uninstaller for 1.5 -->
+  <uninstallfile>uninstall.vehiclemanager.php</uninstallfile>
+
+  <params>
+    <param name="back_button" type="list" default="" label="Back Button" description="Show/Hide Back Button to return to the previous page">
+      <option value="">Use Global</option>
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+  </params>
+
+  <install>
+    <sql>                
+    </sql>
+  </install>
+  <uninstall>
+    <sql>
+    </sql>
+  </uninstall>
+
+  <files folder="../site">
+    <filename>compat.joomla1.5.php</filename>		
+    <filename>functions.php</filename> 
+    <filename>index.html</filename>
+    <filename>vehiclemanager.php</filename>
+    <filename>vehiclemanager.html.php</filename>
+    <filename>vehiclemanager.class.feature.php</filename>
+    <filename>vehiclemanager.class.language.php</filename>
+    <filename>vehiclemanager.class.php</filename>
+    <filename>vehiclemanager.class.rent.php</filename>
+    <filename>vehiclemanager.class.rent_request.php</filename>
+    <filename>vehiclemanager.class.buying_request.php</filename>
+    <filename>vehiclemanager.class.review.php</filename>
+    <filename>vehiclemanager.main.categories.class.php</filename>
+    <filename>router.php</filename>      
+    <filename>makers_and_models.txt</filename>
+    
+    <folder>featured_ico</folder>
+    <folder>edocs</folder>
+    <folder>helpers</folder>
+    <folder>images</folder>
+    <folder>includes</folder>
+    <folder>media</folder>
+    <folder>views</folder>
+    <folder>lightbox</folder>
+    <folder>images</folder>
+    <folder>TABS</folder>
+    <folder>photos</folder>
+    <folder>lang</folder>
+  </files>
+
+  <languages folder="../language">
+    <language tag="en-GB">en-GB/en-GB.com_vehiclemanager.sys.ini</language>
+    <language tag="da-DK">da-DK/da-DK.com_vehiclemanager.sys.ini</language>
+    <language tag="de-DE">de-DE/de-DE.com_vehiclemanager.sys.ini</language>
+    <language tag="es-ES">es-ES/es-ES.com_vehiclemanager.sys.ini</language>
+    <language tag="fa-IR">fa-IR/fa-IR.com_vehiclemanager.sys.ini</language>
+    <language tag="fr-FR">fr-FR/fr-FR.com_vehiclemanager.sys.ini</language>
+    <language tag="hu-HU">hu-HU/hu-HU.com_vehiclemanager.sys.ini</language>
+    <language tag="it-IT">it-IT/it-IT.com_vehiclemanager.sys.ini</language>
+    <language tag="lt-LT">lt-LT/lt-LT.com_vehiclemanager.sys.ini</language>
+    <language tag="nb-NO">nb-NO/nb-NO.com_vehiclemanager.sys.ini</language>
+    <language tag="nl-NL">nl-NL/nl-NL.com_vehiclemanager.sys.ini</language>
+    <language tag="pl-PL">pl-PL/pl-PL.com_vehiclemanager.sys.ini</language>
+    <language tag="pt-BR">pt-BR/pt-BR.com_vehiclemanager.sys.ini</language>
+    <language tag="pt-PT">pt-PT/pt-PT.com_vehiclemanager.sys.ini</language>
+    <language tag="ro-RO">ro-RO/ro-RO.com_vehiclemanager.sys.ini</language>
+    <language tag="ru-RU">ru-RU/ru-RU.com_vehiclemanager.sys.ini</language>
+    <language tag="tr-TR">tr-TR/tr-TR.com_vehiclemanager.sys.ini</language>
+  </languages>
+
+  <administration>
+    <menu img="class:component" >VehicleManager</menu>
+    <submenu>
+      <menu img="class:module" >Vehicles</menu>
+      <menu img="class:category"  link="option=com_vehiclemanager&amp;section=categories">Categories</menu>
+      <menu img="class:writemess"  task="rent_requests">Rent Requests</menu>
+      <menu img="class:writemess"  task="users_rent_history">Users Rent History</menu>
+      <menu img="class:writemess" task="buying_requests">Sale Manager</menu> 
+      <menu img="class:writemess" link="option=com_vehiclemanager&amp;section=featured_manager">Features Manager</menu>
+      <menu img="class:writemess" link="option=com_vehiclemanager&amp;section=language_manager">Language Manager</menu>
+      <menu img="class:config" task="config">Settings</menu>
+      <menu img="class:info" task="about">About</menu>
+    </submenu>
+
+    <files folder="../admin"> 			
+      <filename>install.vehiclemanager.helper.php</filename> 
+      <filename>install.vehiclemanager.php</filename>
+      <filename>uninstall.vehiclemanager.php</filename>
+      <filename>toolbar_ext.php</filename>
+      <filename>menubar_ext.php</filename>                        
+      <filename>index.html</filename>                  
+      <filename>vehiclemanager.php</filename>
+      <filename>vehiclemanager.html.php</filename>
+      <filename>admin.vehiclemanager.class.impexp.php</filename>
+      <filename>admin.vehiclemanager.class.others.php</filename>
+      <filename>admin.vehiclemanager.class.conf.php</filename>
+      <filename>toolbar.vehiclemanager.php</filename>
+      <filename>toolbar.vehiclemanager.html.php</filename>
+      <filename>admin_vehiclemanager.css</filename>
+
+      <folder>exports</folder>
+      <folder>doc</folder>
+      <folder>images</folder>
+      <folder>elements</folder>
+    </files>
+
+    <languages folder="../language">
+      <language tag="en-GB">en-GB/en-GB.com_vehiclemanager.sys.ini</language>
+      <language tag="da-DK">da-DK/da-DK.com_vehiclemanager.sys.ini</language>
+      <language tag="de-DE">de-DE/de-DE.com_vehiclemanager.sys.ini</language>
+      <language tag="es-ES">es-ES/es-ES.com_vehiclemanager.sys.ini</language>
+      <language tag="fa-IR">fa-IR/fa-IR.com_vehiclemanager.sys.ini</language>
+      <language tag="fr-FR">fr-FR/fr-FR.com_vehiclemanager.sys.ini</language>
+      <language tag="hu-HU">hu-HU/hu-HU.com_vehiclemanager.sys.ini</language>
+      <language tag="it-IT">it-IT/it-IT.com_vehiclemanager.sys.ini</language>
+      <language tag="lt-LT">lt-LT/lt-LT.com_vehiclemanager.sys.ini</language>
+      <language tag="nb-NO">nb-NO/nb-NO.com_vehiclemanager.sys.ini</language>
+      <language tag="nl-NL">nl-NL/nl-NL.com_vehiclemanager.sys.ini</language>
+      <language tag="pl-PL">pl-PL/pl-PL.com_vehiclemanager.sys.ini</language>
+      <language tag="pt-BR">pt-BR/pt-BR.com_vehiclemanager.sys.ini</language>
+      <language tag="pt-PT">pt-PT/pt-PT.com_vehiclemanager.sys.ini</language>
+      <language tag="ro-RO">ro-RO/ro-RO.com_vehiclemanager.sys.ini</language>
+      <language tag="ru-RU">ru-RU/ru-RU.com_vehiclemanager.sys.ini</language>
+      <language tag="tr-TR">tr-TR/tr-TR.com_vehiclemanager.sys.ini</language>
+    </languages>
+
+  </administration>
+</extension>

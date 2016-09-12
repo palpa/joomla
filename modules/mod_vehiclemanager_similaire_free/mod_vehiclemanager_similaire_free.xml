@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="module" version="2.5.0" method="upgrade">
+  <name>Vehiclemanager similaires Free</name>
+  <author>OrdaSoft</author>
+  <creationDate>June 2013</creationDate>
+        <copyright>(C) 2013 Andrey Kvasnevskiy-OrdaSoft(akbet@mail.ru)</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <authorEmail>akbet@ordasoft.com, brovinho@mail.ru</authorEmail>
+  <version>3.0 Free</version>
+
+  <description> show similar Vehicles Free</description>
+
+  <files>
+    <filename module="mod_vehiclemanager_similaire_free">mod_vehiclemanager_similaire_free.php</filename>
+    <filename>mod_vehiclemanager_similaire_free.xml</filename>
+    <filename>helper.php</filename>
+    <filename>index.html</filename>
+    <filename>tmpl/default.php</filename>
+    <filename>tmpl/index.html</filename>
+  </files>
+
+
+ <!--Joomla 2.5.3 -->
+  <config>
+    <fields name="params" >
+      <fieldset name="basic">
+        <field
+            name="layout"
+            type="modulelayout"
+            label="JFIELD_ALT_LAYOUT_LABEL"
+            description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+        <field name="image_source_type" type="list" default="1" label="Image source size"
+               description="Image source size. Than more size - than better image quality, but asked more time for load">
+              <option value="0">BIG</option>
+              <option value="1">MEDIUM</option>
+              <option value="2">SMALL</option>
+        </field>
+        <field name="nbProd" type="text" default="3" label="Number of products"
+               description="Number of products to be displayed" />
+        <field name="similaire_h4" type="text" size="100" default="margin: 0px;font-size:1.2em;" label="CSS Title"
+               description="Maker/Model" />
+        <field name="similaire_prix" type="text" size="100" default="font-size: 14px;"
+               label="CSS Prix" description="Prix" />
+        <field name="miniature" type="text" size="100" default="float: left; margin-right: 10px;"
+               label="CSS Div Image" description="Mini of the ad" />
+        <field name="listestyle" type="text" size="100" default="list-style-type: none; background: #fff; padding:10px; border: 1px solid #ddd; overflow: hidden;"
+               label="CSS List" description="CSS List similar offers (LI)" />
+        <field name="@spacer" type="spacer" default="" label="" description="" />
+        <field name="optMarque" type="radio" default="0" label="Mark criterion"
+               description="Taking into account of the Mark for similar">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="optCategorie" type="radio" default="1" label="Category criterion"
+               description="Taking into account of the Category for similar">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="optCarburant" type="radio" default="1" label="Fuel criterion"
+               description="Taking into account the Fuel for similar">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+      </fieldset>
+      <fieldset name="advanced">
+        <field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix"
+               description="Suffix for the css class of the module, to allow individual module styling" />
+        <field  name="ItemId"
+                type="text"
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId"
+                description="Enter Id for Menu Item vehiclemanager" />
+      </fieldset>
+
+    </fields>
+  </config>
+</extension>
+

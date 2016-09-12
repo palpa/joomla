@@ -1,0 +1,191 @@
+
+
+
+.moduletable_slider_right_min,
+.moduletable_vm_search,
+.moduletable_right_map,
+.moduletable_vm_feature{
+
+ &>div:last-child{display: none;}
+
+}
+
+
+// left sidebar
+
+.soc_icons{
+       
+    display:-moz-inline-stack;
+    float: right;
+    display:inline-block;
+    list-style: none;
+    text-align: right;
+
+         @media (min-width: 1025px){
+
+            float: none;
+         }
+
+        @media (max-width: 767px){
+            text-align: center;
+        }
+          
+        li{
+            float: left;
+            padding:0;
+            margin: 7px;
+
+            &:last-child{ margin-right: 0px;}
+
+
+            a{
+                height: 39px;
+                width: 38px;
+                text-align: center;
+
+                padding: 7px;
+                border: 1px solid @colorLigthGray ;
+                border-radius: 50%;
+                font-size: 18px;
+
+                .mix_hover_scale(1.15);
+
+
+                &:hover{
+
+                    border-color: #fc0;
+
+                }
+            }
+            .fa{line-height: 1.2em;}
+        }
+        
+    }
+
+
+    // Central Contenet
+
+    .moduletable_vm_search{
+        background: @colorWhite;
+        padding: 10px;
+        border: @block_border;
+
+
+        .vm_search_inline{
+        display: block;
+        float: left;
+        margin-right: 2.2%;
+        }
+
+        .vehiclemanager_mod_search{.clearfix;}
+
+            .inputbox[type="text"]{ width: 135px;}
+
+            select.inputbox{ width: 80px !important;}
+
+            .vehiclemanager_mod_search #vm_slider_mod_year, 
+            .vehiclemanager_mod_search #vm_slider_mod_price
+            { width: 140px;}
+
+            .vehiclemanager_mod_search .VM_search_year input,
+            .vehiclemanager_mod_search .VM_search_price input
+            {width: 34px;}
+
+        
+
+
+    }
+
+    .moduletable_vm_feature{
+
+        .featured_vehicles_line{.manager_block_bg;}
+
+            .featured_list_viewlisting a{ color: @colorDarcGray;
+
+                &:hover{color: @mainColor;}
+
+            }
+
+            .featured_list_title a:hover{ color: @mainColor; }
+
+                .vm_col_rent{ background: #FF7E00 ;}
+
+    }
+
+
+
+     @media  (min-width: 1025px){
+
+
+        #contentBox>div{  
+     margin-left: 5%;
+    width: 95%;  }
+
+
+ .moduletable_vm_search{
+
+            .vehiclemanager__vm_search 
+        .VM_search_rent .hasDatepicker{width: 98px;}
+        }
+
+
+
+
+     }
+
+
+
+     @media  (max-width: 1024px) and (min-width: 769px){
+
+         .moduletable_vm_search{
+
+            .vm_search_inline{ margin-right: 9%;}
+
+            .inputbox[type="text"]{ width: 180px;}
+
+            .vehiclemanager_mod_search{
+
+                .VM_search_year input,
+                .VM_search_price input
+                {width: 52px;}
+
+                #vm_slider_mod_year,
+                #vm_slider_mod_price
+                {width: 180px;}
+ 
+            } 
+         
+         }
+
+     }
+
+
+
+
+      @media  (max-width: 768px){
+
+        .moduletable_vm_search{
+
+            .vehiclemanager__vm_search 
+        .VM_search_rent .hasDatepicker{width: 105px;}
+        }
+
+     }
+
+     
+
+      @media  (max-width: 320px){
+
+        .vehiclemanager_mod_search{ padding-left: 50px;}
+
+        .VM_search_batton{text-align: center;}
+
+        .featured_vehicles_line{
+
+            img{ width: 250px !important;}
+        }
+
+     }
+
+
+

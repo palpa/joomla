@@ -1,0 +1,189 @@
+.header{
+    background: @header_color;
+    border-bottom: 1px solid @colorBorder;
+    padding: 10px 0 0;
+    margin: 0 0 30px 0;
+    width: 100%;
+
+    #logo{
+        margin:0;
+        border: none;
+        position: relative;
+        padding-top: 39px;
+        z-index: 1;
+
+        img{
+            border: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 767px){
+            text-align: center;
+            padding: 10px 0 20px;
+        }
+
+    }
+
+    .moduletable_header_tel{
+    .clearfix;
+    padding-top: 51px;
+     font-size: 23px; 
+     color: @theme_color1;
+     font-weight: 400;
+   
+
+        &>*>div{
+       float: left;
+        margin: 0px 13px;}
+
+
+            span{ color: @colorWhite;} 
+
+    }
+
+
+    .soc_icons{
+        padding-left: 30px;
+        padding-top: 28px;
+        margin: 15px 0 0;
+        @media (max-width: 767px){
+            text-align: center;
+        }
+          
+        li{
+            
+            a{
+                height: 39px;
+                width: 38px;
+                text-align: center;
+
+                padding: 7px;
+                border: 1px solid @colorLigthGray ;
+                border-radius: 50%;
+
+                font-size: 18px;
+                .transition;
+                &:hover{
+                   
+                }
+            }
+         
+        }
+        
+    }
+
+
+    .opening_times_title{
+        color:@colorGray;
+        font-size: 20px;
+        margin: 0 0 2px 0;
+    }
+    .ot_desc{
+        font-size: 12px;
+        line-height: 14px;
+        color:@colorGray;
+        margin: 0;
+    }
+
+
+    @media (min-width: 1025px){
+
+
+       #logo img {margin-left: 36px;}
+
+       .moduletable_header_tel{ padding-left: 55px;}
+
+
+    }
+    
+
+
+
+
+    @media (max-width: 1024px){
+
+        .custom_header_tel{
+
+            div{ 
+            float: none;
+            text-align: center;
+             }
+        }
+
+        .moduletable_header_tel{
+            padding-top: 35px;
+            padding-bottom: 16px;
+
+
+        }
+
+        .soc_icons{padding-left: 0px;
+
+        }
+        
+     }
+
+      @media (max-width: 768px){
+
+        #logo{ padding-top: 86px;}
+
+        .moduletable_header_tel{padding-top: 84px;
+
+            div{text-align: right;}
+
+        }
+
+        .soc_icons{
+            padding-top: 0px;
+            text-align: left;
+
+            li{
+                margin: 10px 7px;
+                float: none;
+                display: block;
+
+            }
+        }
+
+
+
+      }
+
+
+
+      @media (max-width: 480px){
+
+        #logo{
+         padding-top: 10px;
+
+         img{ height: auto !important;}
+        }
+
+
+        .moduletable_header_tel{
+            padding-top: 20px;
+
+            .custom_header_tel  div{text-align: center;}
+        }
+
+
+
+
+        .soc_icons{
+            display: block;
+            float: none;
+            text-align: center;
+
+
+            li{display: inline-block;}
+
+        }
+       
+
+      }
+
+}
+.navbar-collapse.in {
+    overflow-y: visible;
+}
